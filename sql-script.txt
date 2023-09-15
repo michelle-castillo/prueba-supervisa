@@ -17,7 +17,8 @@ from employees, salaries WHERE  employees.emp_no = 10056
 --4-- 
 select employees.emp_no, employees.first_name, employees.last_name, employees.birth_date,
 departments.dept_name
-from employees,departments
+from employees,departments  GROUP BY employees.emp_no
+
 
 -- 5-- 
 select employees.emp_no, employees.first_name, employees.last_name, employees.birth_date,
