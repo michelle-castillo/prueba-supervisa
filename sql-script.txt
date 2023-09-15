@@ -1,0 +1,26 @@
+select employees.emp_no, employees.first_name ,employees.last_name, employees.gender, dept_emp.from_date 
+from employees, dept_emp
+where employees.gender="F" and dept_emp.from_date  > "2000-01-01" and employees.emp_no = dept_emp.emp_no 
+
+---2--- 
+
+select employees.emp_no, employees.first_name,employees.last_name  ,max(salaries.salary)
+from employees, salaries 
+employees.emp_no = salaries.emp_no 
+GROUP BY employees.emp_no
+
+-- 3 -- 
+
+select employees.emp_no, employees.first_name, employees.last_name, AVG(salaries.salary)
+from employees, salaries WHERE  employees.emp_no = 10056  
+
+--4-- 
+select employees.emp_no, employees.first_name, employees.last_name, employees.birth_date,
+departments.dept_name
+from employees,departments
+
+-- 5-- 
+select employees.emp_no, employees.first_name, employees.last_name, employees.birth_date,
+dept_emp.from_date, departments.dept_name
+from employees,departments,dept_emp GROUP BY  employees.emp_no
+
